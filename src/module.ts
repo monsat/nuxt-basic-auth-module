@@ -8,11 +8,11 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule'
+    name: 'basic-auth',
+    configKey: 'basicAuth',
   },
   defaults: {
-    addPlugin: true
+    addPlugin: true,
   },
   setup (options, nuxt) {
     if (options.addPlugin) {
@@ -20,5 +20,5 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt.options.build.transpile.push(runtimeDir)
       addPlugin(resolve(runtimeDir, 'plugin'))
     }
-  }
+  },
 })

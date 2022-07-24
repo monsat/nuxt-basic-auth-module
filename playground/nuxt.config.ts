@@ -1,11 +1,8 @@
 import { defineNuxtConfig } from 'nuxt'
-import MyModule from '../src/module'
+import BasicAuth from '../src/module'
 
 export default defineNuxtConfig({
   modules: [
-    MyModule
+    BasicAuth,
   ],
-  myModule: {
-    addPlugin: true
-  }
 })

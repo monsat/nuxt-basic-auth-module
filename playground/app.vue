@@ -1,6 +1,6 @@
 <template>
   <div>
-    Nuxt module playground!
+    Nuxt Basic Auth Module playground!
   </div>
 </template>
 
