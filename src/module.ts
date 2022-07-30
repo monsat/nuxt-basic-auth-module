@@ -1,9 +1,19 @@
 import { resolve } from 'path'
 import { fileURLToPath } from 'url'
-import { defineNuxtModule, addPlugin } from '@nuxt/kit'
+import { defineNuxtModule, addServerHandler } from '@nuxt/kit'
+
+declare module '@nuxt/schema' {
+  interface RuntimeConfig {
+    basicAuth: {
+      productionDomains?: string[]
+      pairs?: Record<string, string>
+      realm?: string
+    }
+  }
+}
 
 export interface ModuleOptions {
-  addPlugin: boolean
+  enabled?: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -12,13 +22,18 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'basicAuth',
   },
   defaults: {
-    addPlugin: true,
+    enabled: true,
   },
-  setup (options, nuxt) {
-    if (options.addPlugin) {
-      const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
-      nuxt.options.build.transpile.push(runtimeDir)
-      addPlugin(resolve(runtimeDir, 'plugin'))
+  setup (options, _nuxt) {
+    if (!options.enabled) {
+      return
     }
+
+    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
+
+    addServerHandler({
+      middleware: true,
+      handler: resolve(runtimeDir, 'server/middleware/auth.ts'),
+    })
   },
 })
