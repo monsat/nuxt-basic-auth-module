@@ -23,6 +23,7 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build",
+    "test": "vitest",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
@@ -38,8 +39,11 @@
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
+    "@nuxt/test-utils-edge": "^3.0.0-rc.6-27651720.5dc864d",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
-    "nuxt": "^3.0.0-rc.6"
+    "nuxt": "^3.0.0-rc.6",
+    "playwright": "^1.24.2",
+    "vitest": "^0.19.1"
   }
 }
