@@ -27,6 +27,11 @@
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monsat/nuxt-basic-auth-module.git"
+  },
+  "author": "monsat",
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.6",
     "basic-auth": "^2.0.1"
