@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build",
-    "test": "vitest",
+    "test": "vitest run test",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
