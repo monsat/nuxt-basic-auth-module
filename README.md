@@ -4,6 +4,12 @@ Basic authentication to protect your development website.
 
 This module works **Nuxt 3** only.
 
+## Installation
+
+```
+npm install -D nuxt-basic-authentication-module
+```
+
 ## Usage
 
 ```nuxt.config.ts
@@ -27,11 +33,11 @@ If set to `false`, skip registration authentication handler.
 
 ```nuxt.config.ts
 import { defineNuxtConfig } from 'nuxt'
-import BasicAuth from '' // @TODO
+import BasicAuth from 'nuxt-basic-authentication-module'
 
 export default defineNuxtConfig({
   modules: [
-    [BasicAuth, { enabled: process.env.IS_PROD === '1' }], // works only `IS_PROD=1`
+    [BasicAuth, { enabled: process.env.IS_PROD !== '1' }], // works unless `IS_PROD=1`
   ],
 })
 ```
