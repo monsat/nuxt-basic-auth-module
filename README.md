@@ -14,7 +14,7 @@ npm install -D nuxt-basic-authentication-module
 
 ```nuxt.config.ts
 import { defineNuxtConfig } from 'nuxt'
-import BasicAuth from '' // @TODO
+import BasicAuth from 'nuxt-basic-authentication-module'
 
 export default defineNuxtConfig({
   modules: [
