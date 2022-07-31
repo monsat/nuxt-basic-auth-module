@@ -1,6 +1,6 @@
 {
   "name": "nuxt-basic-authentication-module",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Basic Authentication Module for Nuxt 3",
   "keywords": [
     "nuxt",
