@@ -33,7 +33,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     addServerHandler({
       middleware: true,
-      handler: resolve(runtimeDir, 'server/middleware/auth.ts'),
+      handler: resolve(runtimeDir, 'server/middleware/auth'),
     })
   },
 })
